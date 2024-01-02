@@ -47,12 +47,18 @@ dependencies:
   '@dcloudio/uni-quickapp-webview':
     specifier: 3.0.0-alpha-3081220230802001
     version: 3.0.0-alpha-3081220230802001(postcss@8.4.28)(vue@3.3.4)
+  '@dcloudio/uni-ui':
+    specifier: ^1.4.28
+    version: 1.4.28
   pinia:
     specifier: 2.0.27
     version: 2.0.27(typescript@5.1.6)(vue@3.3.4)
   pinia-plugin-persistedstate:
     specifier: ^3.2.0
     version: 3.2.0(pinia@2.0.27)
+  pnpm:
+    specifier: ^8.13.1
+    version: 8.13.1
   vue:
     specifier: ^3.2.47
     version: 3.3.4
@@ -116,8 +122,8 @@ devDependencies:
     specifier: ^13.0.3
     version: 13.0.4
   miniprogram-api-typings:
-    specifier: ^3.9.1
-    version: 3.9.1
+    specifier: ^3.12.0
+    version: 3.12.2
   prettier:
     specifier: ^2.7.1
     version: 2.8.0
@@ -1901,6 +1907,10 @@ packages:
       - vue
     dev: false
 
+  /@dcloudio/uni-ui@1.4.28:
+    resolution: {integrity: sha512-e/lSbvR79KH9+d3D4ueNbvD6szigjO/5IyjBNmiTqaj0PTS324fBV3L6f3s1qpkYonM4rdOl000hVOcAg6Gh/A==}
+    dev: false
+
   /@dcloudio/uni-vue-devtools@3.0.0-alpha-3080220230511001(postcss@8.4.28)(vue@3.3.4):
     resolution: {integrity: sha512-dpDEnWF5hTsPve2pII/srsQYc6wdZbUt9Ejwy57TfuRz6JmPv+IBLTlGkIiZFo1RgQ3GmYyyFzKPuKiMfeLjIg==}
     dependencies:
@@ -3668,6 +3678,7 @@ packages:
 
   /abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
     dev: true
 
   /accepts@1.3.8:
@@ -4446,6 +4457,7 @@ packages:
   /domexception@2.0.1:
     resolution: {integrity: sha512-yxJ2mFy/sibVQlu5qHjOkf9J3K6zgmCxgJ94u2EdvDOV09H+32LtRswEcUsmUWN72pVLOEnTSRaIVVzVQgS0dg==}
     engines: {node: '>=8'}
+    deprecated: Use your platform's native DOMException instead
     dependencies:
       webidl-conversions: 5.0.0
     dev: true
@@ -6274,8 +6286,8 @@ packages:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: false
 
-  /miniprogram-api-typings@3.9.1:
-    resolution: {integrity: sha512-oyratzOWyuFhBzONp06l0FBPu03ltCd1sRWoy2v38SnAKxtpZ8ySLTSEw//hIsBdocMda7fFZEjOG57L57mcUw==}
+  /miniprogram-api-typings@3.12.2:
+    resolution: {integrity: sha512-OJB2uVAfhycX4teG/zEVpoThushQqLOx946XACDpVc6OQydiJWjn7djVzvNCbv0VOA7sbHGPQp/RkXD9vMCDEw==}
     dev: true
 
   /mkdirp@0.5.6:
@@ -6641,6 +6653,12 @@ packages:
   /pngjs@3.4.0:
     resolution: {integrity: sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==}
     engines: {node: '>=4.0.0'}
+    dev: false
+
+  /pnpm@8.13.1:
+    resolution: {integrity: sha512-dYvrxpictkYsUTgSmEAZOxDCWN3NsKtD7g753Yd4S8IY1uQctb7qw2K4zjPx+LCAJbWZkzwLzoIFCpo2uEdNQw==}
+    engines: {node: '>=16.14'}
+    hasBin: true
     dev: false
 
   /postcss-import@14.1.0(postcss@8.4.28):
