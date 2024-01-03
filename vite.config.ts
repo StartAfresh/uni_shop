@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 
+import path from 'path'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
@@ -8,4 +10,10 @@ export default defineConfig({
     sourcemap: process.env.NODE_ENV === 'development',
   },
   plugins: [uni()],
+  //vite.config.ts
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 })

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-
+import persist from 'pinia-plugin-persistedstate'
 // 定义 Store
 export const useMemberStore = defineStore(
   'member',
@@ -27,9 +27,14 @@ export const useMemberStore = defineStore(
   },
   // TODO: 持久化
   {
-    storage: {
-      getItem(key) {
-        return uni.wx.getStorageSync(key)
+    persist: {
+      storage: {
+        setItem(key, value) {
+          uni.setStorageSync(key, value)
+        },
+        getItem(key) {
+          return uni.getStorageSync(key)
+        },
       },
     },
   },
