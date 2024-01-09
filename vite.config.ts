@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: Do not edit
+ * @Date: 2024-01-02 14:45:52
+ * @LastEditors: Andy
+ * @LastEditTime: 2024-01-07 21:21:43
+ */
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 

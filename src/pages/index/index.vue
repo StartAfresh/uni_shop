@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion:
+ * @version:
+ * @Author: Do not edit
+ * @Date: 2024-01-02 14:45:52
+ * @LastEditors: Andy
+ * @LastEditTime: 2024-01-08 00:11:38
+-->
 <script setup lang="ts">
 import { onLoad } from '@dcloudio/uni-app'
 import { http } from '@/utils/http'
@@ -10,6 +18,8 @@ import { ref } from 'vue'
 import type { BannerItem, CategoryItem, HotItem } from '@/types/home'
 // 定义组件的类型
 import type { XtxGuessInstance } from '@/types/components'
+// 猜你喜欢组合式函数
+import { useGuessList } from '@/composables'
 
 let isLoding = ref(true)
 // 获取轮播图数据
@@ -34,19 +44,15 @@ const getHomeHotData = async () => {
   hotList.value = res.result
 }
 
-// 获取猜你喜欢组件实例
-const guessRef = ref<XtxGuessInstance>()
 onLoad(async () => {
   isLoding.value = true
   await Promise.all([getHomeBannerData(), getHomeCategoryData(), getHomeHotData()])
   isLoding.value = false
 })
+// 获取猜你喜欢组件实例 and 滚动到底部加载更多
+let { guessRef, onScrolltolower } = useGuessList()
 
-// 滚动到底部加载更多
-const onScrolltolower = () => {
-  guessRef.value?.getMore()
-}
-
+onScrolltolower()
 // 下拉刷新
 let isTriggered = ref(false)
 let onRefresherrefresh = async () => {

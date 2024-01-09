@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: Do not edit
+ * @Date: 2024-01-03 16:13:16
+ * @LastEditors: Andy
+ * @LastEditTime: 2024-01-07 22:05:42
+ */
 import type { PageResult, GoodsItem } from './global'
 
 /** 热门推荐 */

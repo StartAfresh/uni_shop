@@ -7,6 +7,7 @@
 		"custom": {
 			// uni-ui 规则如下配置
 			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+			// 以 Xtx 开头的组件，在 components 文件夹中查找引入（需要重启服务器）
 			"^Xtx(.*)": "@/components/Xtx$1.vue"
 		}
 	},
@@ -55,6 +56,12 @@
 			"style": {
 				"navigationBarTitleText": "热门推荐"
 			}
+		},
+		{
+			"path": "pages/goods/goods",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
 		}
 	],
 	"globalStyle": {
@@ -95,5 +102,48 @@
 				"selectedIconPath": "static/tabs/user_selected.png"
 			}
 		]
+	},
+	// 分包加载规则
+	"subPackages": [
+		{
+			// 子包的根目录
+			"root": "pagesMember",
+			// 页面路径和窗口表现
+			"pages": [
+				{
+					"path": "settings/settings",
+					"style": {
+						"navigationBarTitleText": "设置"
+					}
+				},
+				{
+					"path": "profile/profile",
+					"style": {
+						"navigationBarTitleText": "profile"
+					}
+				},
+				{
+					"path": "address/address",
+					"style": {
+						"navigationBarTitleText": "address"
+					}
+				},
+				{
+					"path": "address-form/address-form",
+					"style": {
+						"navigationBarTitleText": "address-form"
+					}
+				}
+			]
+		}
+	],
+	// 分包预下载规则
+	"preloadRule": {
+		"pages/my/my": {
+			"network": "all",
+			"packages": [
+				"pagesMember"
+			]
+		}
 	}
 }
